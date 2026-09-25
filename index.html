@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TJ Plumbing and Heating — San Bruno, CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14202B; --ink-2:#1E2E3C; --copper:#A85C32; --copper-light:#C97A4A;
+  --brass:#C99C4C; --paper:#EEF0EC; --slate:#4B5560; --white:#FFFFFF;
+  --line:rgba(20,32,43,0.12);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0;}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;font-weight:800;letter-spacing:-0.01em;line-height:1.08;}
+a{color:inherit;} img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+header{position:sticky;top:0;top:env(safe-area-inset-top,0px);background:var(--paper);border-bottom:1px solid var(--line);z-index:20;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1120px;margin:0 auto;}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--ink);cursor:pointer;background:none;border:none;}
+.brand span{color:var(--copper);}
+.nav-call{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--white);padding:10px 18px;border-radius:2px;font-weight:600;font-size:0.95rem;text-decoration:none;white-space:nowrap;}
+.nav-call:hover{background:var(--copper);}
+.hero{background:var(--ink);color:var(--white);background-image:linear-gradient(var(--ink-2) 1px, transparent 1px),linear-gradient(90deg, var(--ink-2) 1px, transparent 1px);background-size:56px 56px;background-position:center;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,32,43,0.15) 0%, var(--ink) 88%);}
+.hero-inner{position:relative;z-index:1;padding:88px 28px 76px;max-width:1120px;margin:0 auto;}
+.hero-inner.compact{padding:64px 28px 56px;}
+.hero-tag{color:var(--brass);font-weight:600;font-size:0.95rem;margin-bottom:18px;}
+.hero h1{font-size:clamp(2.3rem, 5.2vw, 3.6rem);max-width:14ch;margin-bottom:22px;}
+.hero-inner.compact h1{font-size:clamp(2rem, 4.6vw, 3rem);max-width:16ch;margin-bottom:18px;}
+.hero p{color:#C7CFD6;font-size:1.1rem;max-width:46ch;margin-bottom:34px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.btn-primary{background:var(--copper);color:var(--white);padding:16px 28px;font-weight:600;font-size:1.05rem;text-decoration:none;border-radius:2px;display:inline-block;border:none;cursor:pointer;font-family:inherit;}
+.btn-primary:hover{background:var(--copper-light);}
+.btn-ghost{border:1px solid rgba(255,255,255,0.3);color:var(--white);padding:15px 26px;font-weight:500;text-decoration:none;border-radius:2px;background:none;cursor:pointer;font-family:inherit;font-size:1rem;}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass);}
+.btn-ghost.on-light{border-color:rgba(20,32,43,0.25);color:var(--ink);}
+.btn-ghost.on-light:hover{border-color:var(--copper);color:var(--copper);}
+.hero-meta{margin-top:44px;display:flex;gap:36px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;color:#AEB8C0;font-size:0.92rem;}
+.hero-meta strong{color:var(--white);display:block;font-size:1.05rem;font-family:'Archivo',sans-serif;}
+section{padding:76px 0;}
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:14px;}
+.section-head p{color:var(--slate);font-size:1.05rem;}
+.services,.include-list{border-top:1px solid var(--line);}
+.service-row{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
+.include-row{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start;}
+.service-mark,.include-mark{width:10px;height:10px;background:var(--copper);margin-top:10px;flex-shrink:0;}
+.service-row h3,.include-row h3{font-size:1.2rem;margin-bottom:6px;font-weight:700;}
+.service-row p,.include-row p{color:var(--slate);max-width:56ch;}
+.service-link{color:var(--copper);text-decoration:none;font-weight:600;white-space:nowrap;align-self:center;border-bottom:1px solid transparent;background:none;cursor:pointer;font-family:inherit;font-size:1rem;}
+.service-link:hover{border-color:var(--copper);}
+.stats{background:var(--ink);color:var(--white);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.stat strong{display:block;font-family:'Archivo',sans-serif;font-size:2.4rem;color:var(--brass);margin-bottom:8px;font-weight:800;}
+.stat span{color:#C7CFD6;font-size:0.98rem;}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.trust-item{border-left:2px solid var(--copper);padding-left:20px;}
+.trust-item h3{font-size:1.15rem;margin-bottom:8px;}
+.trust-item p{color:var(--slate);}
+.contact{background:var(--ink);color:var(--white);}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;}
+.contact h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:16px;}
+.contact > div:first-child p{color:#C7CFD6;font-size:1.05rem;max-width:44ch;margin-bottom:28px;}
+.contact-card{background:var(--ink-2);border:1px solid rgba(255,255,255,0.1);padding:32px;}
+.contact-row{display:flex;flex-direction:column;gap:4px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.contact-row:last-child{border-bottom:none;padding-bottom:0;}
+.contact-row span{color:#93A0AB;font-size:0.9rem;}
+.contact-row a,.contact-row div.value{color:var(--white);font-size:1.15rem;font-weight:600;text-decoration:none;}
+.contact-row a:hover{color:var(--brass);}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--slate);font-size:0.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.page{display:none;}
+.page.active{display:block;}
+@media (max-width:760px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .trust-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .service-row{grid-template-columns:auto 1fr;}
+  .service-link{grid-column:2;margin-top:6px;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <button class="brand" onclick="showPage('home')">TJ Plumbing <span>&amp;</span> Heating</button>
+      <a class="nav-call" href="tel:4154807055">(415) 480-7055</a>
+    </div>
+  </header>
+
+
+    <div id="page-home" class="page active">
+      <div class="hero">
+        <div class="hero-inner">
+          <div class="hero-tag">San Bruno, CA</div>
+          <h1>Same-day plumbing and heating, done right the first time.</h1>
+          <p>Licensed, insured, and on the job for over 40 years. We charge by the job, not the hour, so you always know the price before we start.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="document.getElementById('home-contact').scrollIntoView({behavior:'smooth'})">Request a free estimate</button>
+          </div>
+          <div class="hero-meta">
+            <div><strong>24 hours</strong>Emergency service</div>
+            <div><strong>Same day</strong>Most jobs completed</div>
+            <div><strong>40+ years</strong>Serving the Bay Area</div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What we handle</h2>
+            <p>From a broken water heater to a full AC breakdown, one call covers plumbing, heating, and cooling.</p>
+          </div>
+          <div class="services">
+        <div class="service-row">
+          <div class="service-mark"></div>
+          <div><h3>Air Conditioning Repair &amp; Install</h3><p>Repairs and installs for homes and businesses, priced fairly whether the job is small or large.</p></div>
+          <button class="service-link" onclick="showPage('air-conditioning')">Learn more</button>
+        </div>
+        <div class="service-row">
+          <div class="service-mark"></div>
+          <div><h3>Heating &amp; Furnace Repair</h3><p>Furnace and heating system repair to get warm air back into your home quickly.</p></div>
+          <button class="service-link" onclick="showPage('heating')">Learn more</button>
+        </div>
+        <div class="service-row">
+          <div class="service-mark"></div>
+          <div><h3>Water Heater Repair &amp; Replacement</h3><p>Repairs and replacements backed by a 1-year parts and labor warranty.</p></div>
+          <button class="service-link" onclick="showPage('water-heaters')">Learn more</button>
+        </div>
+        <div class="service-row">
+          <div class="service-mark"></div>
+          <div><h3>Tankless Water Heater Installation</h3><p>Installation and service for tankless systems that deliver hot water on demand.</p></div>
+          <button class="service-link" onclick="showPage('tankless-water-heaters')">Learn more</button>
+        </div>
+        <div class="service-row">
+          <div class="service-mark"></div>
+          <div><h3>Backflow Preventer Testing &amp; Repair</h3><p>Testing, repair, and installation to keep your water supply safe and up to code.</p></div>
+          <button class="service-link" onclick="showPage('backflow-preventer')">Learn more</button>
+        </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats">
+        <div class="wrap">
+          <div class="stats-grid">
+            <div class="stat"><strong>40+</strong><span>Years in business</span></div>
+            <div class="stat"><strong>24/7</strong><span>Emergency calls</span></div>
+            <div class="stat"><strong>1 yr</strong><span>Parts &amp; labor warranty</span></div>
+            <div class="stat"><strong>100%</strong><span>Licensed &amp; insured</span></div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head"><h2>Why San Bruno calls TJ</h2></div>
+          <div class="trust-grid">
+            <div class="trust-item"><h3>Priced by the job</h3><p>You get a flat price before we start, so there's no surprise when the invoice arrives.</p></div>
+            <div class="trust-item"><h3>Free estimates</h3><p>Call and describe the problem, and we'll give you an honest estimate at no cost.</p></div>
+            <div class="trust-item"><h3>Fully licensed and insured</h3><p>Every technician who steps into your home is qualified, background-checked, and covered.</p></div>
+            <div class="trust-item"><h3>Financing available</h3><p>Larger repairs, like gas line work, can be paid off over time through our financing programs.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="home-contact">
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </div>
+
+
+    <div id="page-air-conditioning" class="page">
+      <div class="hero">
+        <div class="hero-inner compact">
+          <div class="hero-tag">Air Conditioning</div>
+          <h1>Air Conditioning Repair &amp; Install</h1>
+          <p>Same-day AC repair and installation for homes and businesses in San Bruno, priced by the job so you know the cost before we start.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="showPage('home')">Back to all services</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What's included</h2>
+            <p>No job is too big or too small &mdash; we price fairly whether it's one unit or a full building.</p>
+          </div>
+          <div class="include-list">
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>AC repair</h3><p>Diagnosing and fixing units that won't cool, won't start, or are running loud.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>New installs</h3><p>Sizing and installing a new system for a home, addition, or small commercial space.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Maintenance</h3><p>Seasonal tune-ups to keep your system efficient and avoid mid-summer breakdowns.</p></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+
+    <div id="page-heating" class="page">
+      <div class="hero">
+        <div class="hero-inner compact">
+          <div class="hero-tag">Heating</div>
+          <h1>Heating &amp; Furnace Repair</h1>
+          <p>Furnace and heating system repair to get warm air back into your home quickly, with technicians available around the clock.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="showPage('home')">Back to all services</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What's included</h2>
+            <p>Heat problems don't wait for business hours, and neither do we.</p>
+          </div>
+          <div class="include-list">
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Furnace repair</h3><p>Troubleshooting no-heat calls, strange noises, and systems that won't hold a temperature.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>System replacement</h3><p>Recommending and installing the right-sized furnace when a repair no longer makes sense.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Emergency heat calls</h3><p>24-hour service when a heating failure can't wait until morning.</p></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+
+    <div id="page-water-heaters" class="page">
+      <div class="hero">
+        <div class="hero-inner compact">
+          <div class="hero-tag">Water Heaters</div>
+          <h1>Water Heater Repair &amp; Replacement</h1>
+          <p>Over 40 years of experience keeping hot water running, backed by a 1-year parts and labor warranty on our work.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="showPage('home')">Back to all services</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What's included</h2>
+            <p>A broken water heater shouldn't mean a cold shower for long.</p>
+          </div>
+          <div class="include-list">
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Repairs</h3><p>Fixing leaks, pilot light issues, and units that run out of hot water too fast.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Replacements</h3><p>Removing the old unit and installing a properly sized replacement, same day where possible.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Warranty coverage</h3><p>Every repair and install is backed by a 1-year parts and labor warranty.</p></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+
+    <div id="page-tankless-water-heaters" class="page">
+      <div class="hero">
+        <div class="hero-inner compact">
+          <div class="hero-tag">Tankless Water Heaters</div>
+          <h1>Tankless Water Heater Installation</h1>
+          <p>Installation and service for tankless systems that deliver continuous hot water on demand instead of a tank that runs out.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="showPage('home')">Back to all services</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What's included</h2>
+            <p>Endless hot water, without the tank taking up space in your utility closet.</p>
+          </div>
+          <div class="include-list">
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>New installation</h3><p>Sizing and installing a tankless unit suited to your home's hot water demand.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Conversion</h3><p>Switching from a traditional tank system to tankless, including any needed line work.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Service &amp; repair</h3><p>Descaling, part replacement, and troubleshooting for existing tankless units.</p></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+
+    <div id="page-backflow-preventer" class="page">
+      <div class="hero">
+        <div class="hero-inner compact">
+          <div class="hero-tag">Backflow Preventer</div>
+          <h1>Backflow Preventer Testing &amp; Repair</h1>
+          <p>Testing, repair, and installation to keep your water supply safe, clean, and up to code.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+            <button class="btn-ghost" onclick="showPage('home')">Back to all services</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What's included</h2>
+            <p>Keeping contaminated water out of the clean water supply, and your property compliant.</p>
+          </div>
+          <div class="include-list">
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Annual testing</h3><p>Certified testing to keep your property compliant with local backflow requirements.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>Repair</h3><p>Fixing failed or leaking backflow assemblies identified during testing.</p></div>
+          </div>
+          <div class="include-row">
+            <div class="include-mark"></div>
+            <div><h3>New installation</h3><p>Installing a backflow preventer for new construction or code-required upgrades.</p></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Get a technician on the way today</h2>
+          <p>Call now for same-day service, or reach out and we'll follow up with a free estimate.</p>
+          <a class="btn-primary" href="tel:4154807055">Call (415) 480-7055</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span>Phone</span><a href="tel:4154807055">(415) 480-7055</a></div>
+          <div class="contact-row"><span>Email</span><a href="mailto:info@tjplumbingandheating.com">info@tjplumbingandheating.com</a></div>
+          <div class="contact-row"><span>Address</span><div class="value">634 San Mateo Ave #4<br>San Bruno, CA 94066</div></div>
+          <div class="contact-row"><span>Hours</span><div class="value">24-hour emergency service</div></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+
+
+    <footer>
+      <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+        <span>© 2026 TJ Plumbing and Heating</span>
+        <span>634 San Mateo Ave #4, San Bruno, CA 94066 · (415) 480-7055</span>
+      </div>
+    </footer>
+
+
+<script>
+function showPage(slug){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  var target = document.getElementById('page-' + slug);
+  if(target){ target.classList.add('active'); }
+  window.scrollTo({top:0, behavior:'instant'});
+  history.replaceState(null, '', '#' + slug);
+}
+window.addEventListener('DOMContentLoaded', function(){
+  var hash = window.location.hash.replace('#','');
+  if(hash){ showPage(hash); }
+});
+</script>
+</body>
+</html>
